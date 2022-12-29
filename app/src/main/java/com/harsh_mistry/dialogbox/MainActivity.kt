@@ -1,6 +1,7 @@
 package com.harsh_mistry.dialogbox
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,6 +36,16 @@ class MainActivity : AppCompatActivity() {
                 txt_date.setText(""+mDay+"/"+mMonth+"/"+mYear)
             },year,month,day)
             dpd.show()
+        }
+        val starttime = c.get(Calendar.HOUR_OF_DAY)
+        val startminut =  c.get(Calendar.MINUTE)
+        btn_time.setOnClickListener {
+           val tpd = TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofday, minut ->
+               txt_time.setText("${hourofday}:${minut}")
+           }, starttime,startminut,false)
+
+            tpd.show()
+
         }
 
     }
