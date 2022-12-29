@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/teal_200">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custome Dialog"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Enter your name"
+        android:textColor="@color/black"
+        android:id="@+id/et_custom_dialog"
+        ></EditText>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_cust_sub"
+        android:text="Submit"
+        android:layout_gravity="center"></Button>
+
+</LinearLayout>

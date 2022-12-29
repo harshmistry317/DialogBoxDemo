@@ -1,12 +1,16 @@
 package com.harsh_mistry.dialogbox
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.TimePickerDialog
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custome_dialog_layput.*
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +49,27 @@ class MainActivity : AppCompatActivity() {
            }, starttime,startminut,false)
 
             tpd.show()
+
+        }
+
+
+        btn_cutom.setOnClickListener {
+
+            var dialog =  Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.custome_dialog_layput)
+            dialog.setCancelable(false)
+
+            dialog.show()
+
+            dialog.btn_cust_sub.setOnClickListener {
+                dialog.dismiss()
+                val name =  dialog.et_custom_dialog.text.toString()
+                Toast.makeText(applicationContext, "Heloo $name",Toast.LENGTH_LONG).show()
+            }
+
+
+
 
         }
 
